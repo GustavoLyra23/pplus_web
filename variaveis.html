@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"
+        href="assets/20250801_1038_Elemento Geométrico Vermelho_remix_01k1jxpdn6ebhbxr112q7b4fp7.png">
+    <title>Variáveis - Portugol++</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="doc-container">
+        <nav class="breadcrumb">
+            <a href="index.html">← Voltar ao Início</a>
+        </nav>
+
+        <h1>Variáveis</h1>
+        <p>Variáveis são espaços na memória para armazenar dados que podem ser modificados durante a execução do
+            programa.</p>
+
+        <h2>Declaração de Variáveis</h2>
+        <p>Use a palavra-chave <code>var</code> seguida do nome da variável:</p>
+
+        <h3>Declaração com Tipo Explícito</h3>
+        <div class="code-block">
+            <code><span class="keyword">var</span> nome: <span class="type">Texto</span>;
+<span class="keyword">var</span> idade: <span class="type">Inteiro</span>;
+<span class="keyword">var</span> altura: <span class="type">Real</span>;</code>
+        </div>
+
+        <h3>Declaração com Inicialização</h3>
+        <div class="code-block">
+            <code><span class="keyword">var</span> nome: <span class="type">Texto</span> = <span class="string">"Maria"</span>;
+<span class="keyword">var</span> idade: <span class="type">Inteiro</span> = <span class="number">30</span>;
+<span class="keyword">var</span> ativo: <span class="type">Logico</span> = <span class="keyword">verdadeiro</span>;</code>
+        </div>
+
+        <h3>Declaração com Inferência de Tipo</h3>
+        <p>O tipo pode ser inferido automaticamente pelo valor inicial:</p>
+        <div class="code-block">
+            <code><span class="keyword">var</span> nome = <span class="string">"João"</span>;      <span class="comment">// Inferido como Texto</span>
+<span class="keyword">var</span> idade = <span class="number">25</span>;        <span class="comment">// Inferido como Inteiro</span>
+<span class="keyword">var</span> altura = <span class="number">1.80</span>;     <span class="comment">// Inferido como Real</span></code>
+        </div>
+
+        <h2>Atribuição de Valores</h2>
+        <p>Use o operador <code>=</code> para atribuir valores às variáveis:</p>
+        <div class="code-block">
+            <code>nome = <span class="string">"Pedro"</span>;
+idade = idade + <span class="number">1</span>;
+ativo = <span class="keyword">falso</span>;</code>
+        </div>
+
+        <h2>Escopo de Variáveis</h2>
+        <p>Variáveis declaradas dentro de funções são locais. Variáveis declaradas em classes são atributos da classe.
+        </p>
+
+        <h3>Variável Local</h3>
+        <div class="code-block">
+            <code><span class="keyword">funcao</span> <span class="function">exemploFuncao</span>() {
+    <span class="keyword">var</span> local: <span class="type">Texto</span> = <span class="string">"Só existe aqui"</span>;
+}</code>
+        </div>
+
+        <h3>Atributo de Classe</h3>
+        <div class="code-block">
+            <code><span class="keyword">classe</span> <span class="type">MinhaClasse</span> {
+    <span class="keyword">var</span> atributo: <span class="type">Inteiro</span> = <span class="number">10</span>;
+}</code>
+        </div>
+
+        <nav class="doc-nav">
+            <a href="tipos.html">← Anterior: Tipos de Dados</a>
+            <a href="funcoes.html">Próximo: Funções →</a>
+        </nav>
+    </div>
+</body>
+
+</html>

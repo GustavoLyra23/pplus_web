@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"
+        href="assets/20250801_1038_Elemento Geométrico Vermelho_remix_01k1jxpdn6ebhbxr112q7b4fp7.png">
+    <title>Expressões e Operadores - Portugol++</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="doc-container">
+        <nav class="breadcrumb">
+            <a href="index.html">← Voltar ao Início</a>
+        </nav>
+
+        <h1>Expressões e Operadores</h1>
+        <p>Expressões são combinações de valores, variáveis e operadores que produzem um resultado.</p>
+
+        <h2>Operadores Aritméticos</h2>
+        <p>Realizam operações matemáticas:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">var</span> a: <span class="type">Inteiro</span> = <span class="number">10</span>;
+<span class="keyword">var</span> b: <span class="type">Inteiro</span> = <span class="number">3</span>;
+
+<span class="keyword">var</span> soma: <span class="type">Inteiro</span> = a + b;        <span class="comment">// 13</span>
+<span class="keyword">var</span> subtracao: <span class="type">Inteiro</span> = a - b;   <span class="comment">// 7</span>
+<span class="keyword">var</span> multiplicacao: <span class="type">Inteiro</span> = a * b; <span class="comment">// 30</span>
+<span class="keyword">var</span> divisao: <span class="type">Real</span> = a / b;         <span class="comment">// 3.33...</span>
+<span class="keyword">var</span> modulo: <span class="type">Inteiro</span> = a % b;       <span class="comment">// 1 (resto da divisão)</span></code>
+        </div>
+
+        <h2>Operadores de Comparação</h2>
+        <p>Comparam valores e retornam verdadeiro ou falso:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">var</span> x: <span class="type">Inteiro</span> = <span class="number">5</span>;
+<span class="keyword">var</span> y: <span class="type">Inteiro</span> = <span class="number">10</span>;
+
+<span class="keyword">var</span> igual: <span class="type">Logico</span> = x == y;       <span class="comment">// falso</span>
+<span class="keyword">var</span> diferente: <span class="type">Logico</span> = x != y;   <span class="comment">// verdadeiro</span>
+<span class="keyword">var</span> menor: <span class="type">Logico</span> = x < y;        <span class="comment">// verdadeiro</span>
+<span class="keyword">var</span> menorIgual: <span class="type">Logico</span> = x <= y;  <span class="comment">// verdadeiro</span>
+<span class="keyword">var</span> maior: <span class="type">Logico</span> = x > y;        <span class="comment">// falso</span>
+<span class="keyword">var</span> maiorIgual: <span class="type">Logico</span> = x >= y;  <span class="comment">// falso</span></code>
+        </div>
+
+        <h2>Operadores Lógicos</h2>
+        <p>Combinam expressões lógicas:</p>
+
+        <h3>E Lógico (e)</h3>
+        <div class="code-block">
+            <code><span class="keyword">var</span> idade: <span class="type">Inteiro</span> = <span class="number">25</span>;
+<span class="keyword">var</span> temCarteira: <span class="type">Logico</span> = <span class="keyword">verdadeiro</span>;
+
+<span class="keyword">var</span> podeDirigir: <span class="type">Logico</span> = idade >= <span class="number">18</span> <span class="keyword">e</span> temCarteira;
+<span class="comment">// verdadeiro apenas se ambas condições forem verdadeiras</span></code>
+        </div>
+
+        <h3>OU Lógico (ou)</h3>
+        <div class="code-block">
+            <code><span class="keyword">var</span> ehFimDeSemana: <span class="type">Logico</span> = <span class="keyword">verdadeiro</span>;
+<span class="keyword">var</span> ehFeriado: <span class="type">Logico</span> = <span class="keyword">falso</span>;
+
+<span class="keyword">var</span> podeDescansar: <span class="type">Logico</span> = ehFimDeSemana <span class="keyword">ou</span> ehFeriado;
+<span class="comment">// verdadeiro se pelo menos uma condição for verdadeira</span></code>
+        </div>
+
+        <h3>NÃO Lógico (!)</h3>
+        <div class="code-block">
+            <code><span class="keyword">var</span> chovendo: <span class="type">Logico</span> = <span class="keyword">falso</span>;
+<span class="keyword">var</span> podeSair: <span class="type">Logico</span> = !chovendo;  <span class="comment">// verdadeiro</span>
+
+<span class="keyword">var</span> estaChovendo: <span class="type">Logico</span> = <span class="keyword">verdadeiro</span>;
+<span class="keyword">var</span> naoChuva: <span class="type">Logico</span> = !estaChovendo;  <span class="comment">// falso</span></code>
+        </div>
+
+        <h2>Operadores Unários</h2>
+        <p>Operam em um único valor:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">var</span> numero: <span class="type">Inteiro</span> = <span class="number">42</span>;
+<span class="keyword">var</span> negativo: <span class="type">Inteiro</span> = -numero;   <span class="comment">// -42</span>
+
+<span class="keyword">var</span> condicao: <span class="type">Logico</span> = <span class="keyword">verdadeiro</span>;
+<span class="keyword">var</span> inverso: <span class="type">Logico</span> = !condicao;   <span class="comment">// falso</span></code>
+        </div>
+
+        <h2>Operador de Atribuição</h2>
+        <p>Atribui valores às variáveis:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">var</span> nome: <span class="type">Texto</span>;
+nome = <span class="string">"João"</span>;  <span class="comment">// Atribuição simples</span>
+
+<span class="keyword">var</span> contador: <span class="type">Inteiro</span> = <span class="number">0</span>;
+contador = contador + <span class="number">1</span>;  <span class="comment">// Incremento</span></code>
+        </div>
+
+        <h2>Acesso a Propriedades e Arrays</h2>
+
+        <h3>Acesso a Propriedades</h3>
+        <div class="code-block">
+            <code><span class="keyword">var</span> pessoa: <span class="type">Pessoa</span> = <span class="keyword">nova</span> <span class="type">Pessoa</span>();
+pessoa.nome = <span class="string">"Maria"</span>;
+<span class="keyword">var</span> nomeCompleto: <span class="type">Texto</span> = pessoa.nome + <span class="string">" Silva"</span>;</code>
+        </div>
+
+        <h3>Acesso a Arrays</h3>
+        <div class="code-block">
+            <code><span class="keyword">var</span> numeros: <span class="type">Lista</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];
+<span class="keyword">var</span> primeiro: <span class="type">Inteiro</span> = numeros[<span class="number">0</span>];    <span class="comment">// 1</span>
+<span class="keyword">var</span> segundo: <span class="type">Inteiro</span> = numeros[<span class="number">1</span>];     <span class="comment">// 2</span>
+
+numeros[<span class="number">0</span>] = <span class="number">10</span>;  <span class="comment">// Modificando o primeiro elemento</span></code>
+        </div>
+
+        <h3>Acesso Bidimensional</h3>
+        <div class="code-block">
+            <code><span class="keyword">var</span> matriz: <span class="type">Lista</span> = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]];
+<span class="keyword">var</span> elemento: <span class="type">Inteiro</span> = matriz[<span class="number">0</span>][<span class="number">1</span>];  <span class="comment">// 2</span>
+matriz[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">99</span>;  <span class="comment">// Modificando elemento [1][0]</span></code>
+        </div>
+
+        <h2>Precedência de Operadores</h2>
+        <p>Ordem de avaliação (do maior para o menor):</p>
+
+        <ul>
+            <li>Parênteses: <code>()</code></li>
+            <li>Acesso: <code>.</code> e <code>[]</code></li>
+            <li>Unários: <code>!</code> e <code>-</code></li>
+            <li>Multiplicação/Divisão: <code>*</code>, <code>/</code>, <code>%</code></li>
+            <li>Adição/Subtração: <code>+</code>, <code>-</code></li>
+            <li>Comparação: <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code></li>
+            <li>Igualdade: <code>==</code>, <code>!=</code></li>
+            <li>E lógico: <code>e</code></li>
+            <li>OU lógico: <code>ou</code></li>
+            <li>Atribuição: <code>=</code></li>
+        </ul>
+
+        <h2>Exemplos Práticos</h2>
+
+        <h3>Cálculo Complexo</h3>
+        <div class="code-block">
+            <code><span class="keyword">var</span> a: <span class="type">Real</span> = <span class="number">10.0</span>;
+<span class="keyword">var</span> b: <span class="type">Real</span> = <span class="number">5.0</span>;
+<span class="keyword">var</span> c: <span class="type">Real</span> = <span class="number">2.0</span>;
+
+<span class="keyword">var</span> resultado: <span class="type">Real</span> = (a + b) * c / (a - b);
+<span class="comment">// (10 + 5) * 2 / (10 - 5) = 15 * 2 / 5 = 6</span></code>
+        </div>
+
+        <h3>Validação Complexa</h3>
+        <div class="code-block">
+            <code><span class="keyword">var</span> idade: <span class="type">Inteiro</span> = <span class="number">20</span>;
+<span class="keyword">var</span> temRenda: <span class="type">Logico</span> = <span class="keyword">verdadeiro</span>;
+<span class="keyword">var</span> scoreCredito: <span class="type">Inteiro</span> = <span class="number">750</span>;
+
+<span class="keyword">var</span> aprovado: <span class="type">Logico</span> = (idade >= <span class="number">18</span> <span class="keyword">e</span> idade <= <span class="number">65</span>) <span class="keyword">e</span>
+                       temRenda <span class="keyword">e</span>
+                       scoreCredito >= <span class="number">600</span>;</code>
+        </div>
+
+        <nav class="doc-nav">
+            <a href="controle.html">← Anterior: Estruturas de Controle</a>
+            <a href="importacoes.html">Próximo: Importações →</a>
+        </nav>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"
+        href="assets/20250801_1038_Elemento Geométrico Vermelho_remix_01k1jxpdn6ebhbxr112q7b4fp7.png">
+    <title>Classes - Portugol++</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="doc-container">
+        <nav class="breadcrumb">
+            <a href="index.html">← Voltar ao Início</a>
+        </nav>
+
+        <h1>Classes</h1>
+        <p>Classes são modelos para criar objetos que agrupam dados (atributos) e comportamentos (métodos).</p>
+
+        <h2>Declaração de Classes</h2>
+        <p>Use a palavra-chave <code>classe</code> seguida do nome da classe:</p>
+
+        <h3>Classe Simples</h3>
+        <div class="code-block">
+            <code><span class="keyword">classe</span> <span class="type">Pessoa</span> {
+    <span class="keyword">var</span> nome: <span class="type">Texto</span>;
+    <span class="keyword">var</span> idade: <span class="type">Inteiro</span>;
+
+    <span class="keyword">funcao</span> <span class="function">apresentar</span>() {
+        <span class="function">escrever</span>(<span class="string">"Olá, eu sou "</span> + <span class="keyword">this</span>.nome);
+    }
+}</code>
+        </div>
+
+        <h2>Criação de Objetos</h2>
+        <p>Use a palavra-chave <code>nova</code> para criar instâncias da classe:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">var</span> pessoa1: <span class="type">Pessoa</span> = <span class="keyword">nova</span> <span class="function">Pessoa</span>();
+pessoa1.nome = <span class="string">"João"</span>;
+pessoa1.idade = <span class="number">25</span>;
+pessoa1.<span class="function">apresentar</span>();</code>
+        </div>
+
+        <h2>Herança</h2>
+        <p>Use <code>estende</code> para criar uma classe que herda de outra:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">classe</span> <span class="type">Estudante</span> <span class="keyword">estende</span> <span class="type">Pessoa</span> {
+    <span class="keyword">var</span> curso: <span class="type">Texto</span>;
+    <span class="keyword">var</span> matricula: <span class="type">Inteiro</span>;
+
+    <span class="keyword">funcao</span> <span class="function">estudar</span>() {
+        <span class="function">escrever</span>(<span class="keyword">this</span>.nome + <span class="string">" está estudando "</span> + <span class="keyword">this</span>.curso);
+    }
+}</code>
+        </div>
+
+        <h3>Usando a Herança</h3>
+        <div class="code-block">
+            <code><span class="keyword">var</span> estudante: <span class="type">Estudante</span> = <span class="keyword">nova</span> <span class="function">Estudante</span>();
+estudante.nome = <span class="string">"Maria"</span>;        <span class="comment">// Herdado de Pessoa</span>
+estudante.idade = <span class="number">20</span>;           <span class="comment">// Herdado de Pessoa</span>
+estudante.curso = <span class="string">"Informática"</span>;
+estudante.<span class="function">apresentar</span>();         <span class="comment">// Método herdado</span>
+estudante.<span class="function">estudar</span>();            <span class="comment">// Método próprio</span></code>
+        </div>
+
+        <h2>Implementação de Interfaces</h2>
+        <p>Use <code>implementa</code> para fazer a classe seguir um contrato de interface:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">classe</span> <span class="type">Retangulo</span> <span class="keyword">implementa</span> <span class="type">Forma</span> {
+    <span class="keyword">var</span> largura: <span class="type">Real</span>;
+    <span class="keyword">var</span> altura: <span class="type">Real</span>;
+
+    <span class="keyword">funcao</span> <span class="function">calcularArea</span>(): <span class="type">Real</span> {
+        <span class="keyword">return</span> <span class="keyword">this</span>.largura * <span class="keyword">this</span>.altura;
+    }
+}</code>
+        </div>
+
+        <h2>Múltiplas Interfaces</h2>
+        <p>Uma classe pode implementar várias interfaces:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">classe</span> <span class="type">Quadrado</span> <span class="keyword">implementa</span> <span class="type">Forma</span>, <span class="type">Desenhavel</span> {
+    <span class="keyword">var</span> lado: <span class="type">Real</span>;
+
+    <span class="keyword">funcao</span> <span class="function">calcularArea</span>(): <span class="type">Real</span> {
+        <span class="keyword">return</span> <span class="keyword">this</span>.lado * <span class="keyword">this</span>.lado;
+    }
+
+    <span class="keyword">funcao</span> <span class="function">desenhar</span>() {
+        <span class="function">escrever</span>(<span class="string">"Desenhando um quadrado"</span>);
+    }
+}</code>
+        </div>
+
+        <h2>Palavra-chave this</h2>
+        <p>Use <code>this</code> para referenciar o objeto atual dentro da classe:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">classe</span> <span class="type">Contador</span> {
+    <span class="keyword">var</span> valor: <span class="type">Inteiro</span> = <span class="number">0</span>;
+
+    <span class="keyword">funcao</span> <span class="function">incrementar</span>() {
+        <span class="keyword">this</span>.valor = <span class="keyword">this</span>.valor + <span class="number">1</span>;
+    }
+
+    <span class="keyword">funcao</span> <span class="function">obterValor</span>(): <span class="type">Inteiro</span> {
+        <span class="keyword">return</span> <span class="keyword">this</span>.valor;
+    }
+}</code>
+        </div>
+
+        <nav class="doc-nav">
+            <a href="funcoes.html">← Anterior: Funções</a>
+            <a href="interfaces.html">Próximo: Interfaces →</a>
+        </nav>
+    </div>
+</body>
+
+</html>

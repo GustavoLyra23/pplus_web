@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"
+        href="assets/20250801_1038_Elemento Geométrico Vermelho_remix_01k1jxpdn6ebhbxr112q7b4fp7.png">
+    <title>Interfaces - Portugol++</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="doc-container">
+        <nav class="breadcrumb">
+            <a href="index.html">← Voltar ao Início</a>
+        </nav>
+
+        <h1>Interfaces</h1>
+        <p>Interfaces definem contratos que as classes devem seguir, especificando quais métodos devem ser
+            implementados.</p>
+
+        <h2>Declaração de Interfaces</h2>
+        <p>Use a palavra-chave <code>interface</code> seguida do nome e assinaturas dos métodos:</p>
+
+        <h3>Interface Simples</h3>
+        <div class="code-block">
+            <code><span class="keyword">interface</span> <span class="type">Forma</span> {
+    <span class="keyword">funcao</span> <span class="function">calcularArea</span>(): <span class="type">Real</span>;
+    <span class="keyword">funcao</span> <span class="function">calcularPerimetro</span>(): <span class="type">Real</span>;
+}</code>
+        </div>
+
+        <h2>Implementação de Interfaces</h2>
+        <p>Classes que implementam uma interface devem fornecer todos os métodos declarados:</p>
+
+        <h3>Classe Implementando Interface</h3>
+        <div class="code-block">
+            <code><span class="keyword">classe</span> <span class="type">Circulo</span> <span class="keyword">implementa</span> <span class="type">Forma</span> {
+    <span class="keyword">var</span> raio: <span class="type">Real</span>;
+
+    <span class="keyword">funcao</span> <span class="function">calcularArea</span>(): <span class="type">Real</span> {
+        <span class="keyword">return</span> <span class="number">3.14159</span> * <span class="keyword">this</span>.raio * <span class="keyword">this</span>.raio;
+    }
+
+    <span class="keyword">funcao</span> <span class="function">calcularPerimetro</span>(): <span class="type">Real</span> {
+        <span class="keyword">return</span> <span class="number">2</span> * <span class="number">3.14159</span> * <span class="keyword">this</span>.raio;
+    }
+}</code>
+        </div>
+
+        <h2>Múltiplas Interfaces</h2>
+        <p>Uma classe pode implementar várias interfaces separadas por vírgula:</p>
+
+        <h3>Múltiplas Interfaces</h3>
+        <div class="code-block">
+            <code><span class="keyword"></span>interface</span> <span class="type">Desenhavel</span> {
+    <span class="keyword">funcao</span> <span class="function">desenhar</span>();
+    <span class="keyword">funcao</span> <span class="function">apagar</span>();
+}</code>
+        </div>
+
+        <h3>Classe com Múltiplas Interfaces</h3>
+        <div class="code-block">
+            <code><span class="keyword">classe</span> <span class="type">Retangulo</span> <span class="keyword">implementa</span> <span class="type">Forma</span>, <span class="type">Desenhavel</span>, <span class="type">Colorivel</span> {
+    <span class="keyword">var</span> largura: <span class="type">Real</span>;
+    <span class="keyword">var</span> altura: <span class="type">Real</span>;
+    <span class="keyword">var</span> cor: <span class="type">Texto</span>;
+
+    <span class="comment">// Métodos da interface Forma</span>
+    <span class="keyword">funcao</span> <span class="function">calcularArea</span>(): <span class="type">Real</span> {
+        <span class="keyword">return</span> <span class="keyword">this</span>.largura * <span class="keyword">this</span>.altura;
+    }
+
+    <span class="keyword">funcao</span> <span class="function">calcularPerimetro</span>(): <span class="type">Real</span> {
+        <span class="keyword">return</span> <span class="number">2</span> * (<span class="keyword">this</span>.largura + <span class="keyword">this</span>.altura);
+    }
+
+    <span class="comment">// Métodos da interface Desenhavel</span>
+    <span class="keyword">funcao</span> <span class="function">desenhar</span>() {
+        <span class="function">escrever</span>(<span class="string">"Desenhando retângulo"</span>);
+    }
+
+    <span class="keyword">funcao</span> <span class="function">apagar</span>() {
+        <span class="function">escrever</span>(<span class="string">"Apagando retângulo"</span>);
+    }
+
+    <span class="comment">// Métodos da interface Colorivel</span>
+    <span class="keyword">funcao</span> <span class="function">definirCor</span>(cor: <span class="type">Texto</span>) {
+        <span class="keyword">this</span>.cor = cor;
+    }
+
+    <span class="keyword">funcao</span> <span class="function">obterCor</span>(): <span class="type">Texto</span> {
+        <span class="keyword">return</span> <span class="keyword">this</span>.cor;
+    }
+}</code>
+        </div>
+
+        <h2>Vantagens das Interfaces</h2>
+        <ul>
+            <li>Garantem que classes implementem métodos específicos</li>
+            <li>Permitem polimorfismo</li>
+            <li>Facilitam a organização do código</li>
+            <li>Tornam o código mais flexível e reutilizável</li>
+        </ul>
+
+        <h2>Exemplo Prático</h2>
+        <div class="code-block">
+            <code><span class="comment">// Usando as classes que implementam Forma</span>
+<span class="keyword">var</span> circulo: <span class="type">Circulo</span> = <span class="keyword">nova</span> <span class="type">Circulo</span>();
+circulo.raio = <span class="number">5.0</span>;
+
+<span class="keyword">var</span> retangulo: <span class="type">Retangulo</span> = <span class="keyword">nova</span> <span class="type">Retangulo</span>();
+retangulo.largura = <span class="number">10.0</span>;
+retangulo.altura = <span class="number">6.0</span>;
+
+<span class="comment">// Ambos têm os métodos da interface Forma</span>
+<span class="function">escrever</span>(<span class="string">"Área do círculo: "</span> + circulo.<span class="function">calcularArea</span>());
+<span class="function">escrever</span>(<span class="string">"Área do retângulo: "</span> + retangulo.<span class="function">calcularArea</span>());</code>
+        </div>
+
+        <nav class="doc-nav">
+            <a href="classes.html">← Anterior: Classes</a>
+            <a href="controle.html">Próximo: Estruturas de Controle →</a>
+        </nav>
+    </div>
+</body>
+
+</html>

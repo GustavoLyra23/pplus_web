@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"
+        href="assets/20250801_1038_Elemento Geométrico Vermelho_remix_01k1jxpdn6ebhbxr112q7b4fp7.png">
+    <title>Importações - Portugol++</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="doc-container">
+        <nav class="breadcrumb">
+            <a href="index.html">← Voltar ao Início</a>
+        </nav>
+
+        <h1>Importações</h1>
+        <p>O sistema de importações permite usar código de outros arquivos e bibliotecas em seu programa.</p>
+
+        <h2>Sintaxe Básica</h2>
+        <p>Use a palavra-chave <code>importar</code> seguida do caminho do arquivo entre aspas:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">importar</span> <span class="string">"biblioteca.pp"</span>;
+<span class="keyword">importar</span> <span class="string">"utils/helpers.pp"</span>;
+<span class="keyword">importar</span> <span class="string">"matematica/calculos.pp"</span>;</code>
+        </div>
+
+        <h2>Importação de Bibliotecas Padrão</h2>
+        <p>Bibliotecas do sistema podem ser importadas diretamente:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">importar</span> <span class="string">"std/io.pp"</span>;         <span class="comment">// Entrada e saída</span>
+<span class="keyword">importar</span> <span class="string">"std/math.pp"</span>;       <span class="comment">// Funções matemáticas</span>
+<span class="keyword">importar</span> <span class="string">"std/string.pp"</span>;     <span class="comment">// Manipulação de texto</span>
+<span class="keyword">importar</span> <span class="string">"std/list.pp"</span>;       <span class="comment">// Operações com listas</span>
+<span class="keyword">importar</span> <span class="string">"std/file.pp"</span>;       <span class="comment">// Manipulação de arquivos</span></code>
+        </div>
+
+        <h2>Importação de Arquivos Locais</h2>
+        <p>Importe arquivos do seu projeto usando caminhos relativos:</p>
+
+        <h3>Estrutura de Projeto</h3>
+        <div class="code-block">
+            <code>projeto/</code><br>
+            <code>├── main.pp</code><br>
+            <code>├── classes/</code><br>
+            <code>│   ├── Pessoa.pp</code><br>
+            <code>│   └── Estudante.pp</code><br>
+            <code>└── utils/</code><br>
+            <code>    ├── matematica.pp</code><br>
+            <code>    └── validacoes.pp</code>
+        </div>
+
+        <h3>Importando no main.pp</h3>
+        <div class="code-block">
+            <code><span class="keyword">importar</span> <span class="string">"classes/Pessoa.pp"</span>;
+<span class="keyword">importar</span> <span class="string">"classes/Estudante.pp"</span>;
+<span class="keyword">importar</span> <span class="string">"utils/matematica.pp"</span>;
+<span class="keyword">importar</span> <span class="string">"utils/validacoes.pp"</span>;</code>
+        </div>
+
+        <h2>Exemplo de Arquivo para Importação</h2>
+
+        <h3>Arquivo: utils/matematica.pp</h3>
+        <div class="code-block">
+            <code><span class="comment">// Funções matemáticas úteis</span>
+
+<span class="keyword">funcao</span> <span class="function">calcularPotencia</span>(base: <span class="type">Real</span>, expoente: <span class="type">Inteiro</span>): <span class="type">Real</span> {
+    <span class="keyword">var</span> resultado: <span class="type">Real</span> = <span class="number">1.0</span>;
+    <span class="keyword">para</span> (<span class="keyword">var</span> i: <span class="type">Inteiro</span> = <span class="number">0</span>; i < expoente; i = i + <span class="number">1</span>) {
+        resultado = resultado * base;
+    }
+    <span class="keyword">return</span> resultado;
+}
+
+<span class="keyword">funcao</span> <span class="function">calcularFatorial</span>(n: <span class="type">Inteiro</span>): <span class="type">Inteiro</span> {
+    <span class="keyword">se</span> (n <= <span class="number">1</span>) {
+        <span class="keyword">return</span> <span class="number">1</span>;
+    }
+    <span class="keyword">return</span> n * <span class="function">calcularFatorial</span>(n - <span class="number">1</span>);
+}</code>
+        </div>
+
+        <h3>Arquivo: classes/Pessoa.pp</h3>
+        <div class="code-block">
+            <code><span class="keyword">classe</span> <span class="type">Pessoa</span> {
+    <span class="keyword">var</span> nome: <span class="type">Texto</span>;
+    <span class="keyword">var</span> idade: <span class="type">Inteiro</span>;
+
+    <span class="keyword">funcao</span> <span class="function">apresentar</span>() {
+        <span class="function">escrever</span>(<span class="string">"Olá, eu sou "</span> + <span class="keyword">this</span>.nome + <span class="string">" e tenho "</span> + <span class="keyword">this</span>.idade + <span class="string">" anos"</span>);
+    }
+
+    <span class="keyword">funcao</span> <span class="function">ehMaiorIdade</span>(): <span class="type">Logico</span> {
+        <span class="keyword">return</span> <span class="keyword">this</span>.idade >= <span class="number">18</span>;
+    }
+}</code>
+        </div>
+
+        <h2>Usando Código Importado</h2>
+
+        <h3>Arquivo: main.pp</h3>
+        <div class="code-block">
+            <code><span class="keyword">importar</span> <span class="string">"classes/Pessoa.pp"</span>;
+<span class="keyword">importar</span> <span class="string">"utils/matematica.pp"</span>;
+
+<span class="keyword">funcao</span> <span class="function">main</span>() {
+    <span class="comment">// Usando classe importada</span>
+    <span class="keyword">var</span> pessoa: <span class="type">Pessoa</span> = <span class="keyword">nova</span> <span class="type">Pessoa</span>();
+    pessoa.nome = <span class="string">"João"</span>;
+    pessoa.idade = <span class="number">25</span>;
+    pessoa.<span class="function">apresentar</span>();
+
+    <span class="comment">// Usando funções importadas</span>
+    <span class="keyword">var</span> potencia: <span class="type">Real</span> = <span class="function">calcularPotencia</span>(<span class="number">2.0</span>, <span class="number">3</span>);
+    <span class="keyword">var</span> fatorial: <span class="type">Inteiro</span> = <span class="function">calcularFatorial</span>(<span class="number">5</span>);
+
+    <span class="function">escrever</span>(<span class="string">"2³ = "</span> + potencia);
+    <span class="function">escrever</span>(<span class="string">"5! = "</span> + fatorial);
+}</code>
+        </div>
+
+        <h2>Boas Práticas</h2>
+
+        <h3>Organização</h3>
+        <ul>
+            <li>Coloque todas as importações no início do arquivo</li>
+            <li>Organize arquivos em pastas por funcionalidade</li>
+            <li>Use nomes descritivos para arquivos e pastas</li>
+        </ul>
+
+        <h3>Convenções</h3>
+        <ul>
+            <li>Termine arquivos Portugol++ com <code>.pp</code></li>
+            <li>Use PascalCase para nomes de classes</li>
+            <li>Use camelCase para funções e variáveis</li>
+            <li>Uma classe por arquivo (quando possível)</li>
+        </ul>
+
+        <h2>Importações Múltiplas</h2>
+        <p>Você pode importar vários arquivos relacionados:</p>
+
+        <div class="code-block">
+            <code><span class="comment">// Importando todo o módulo de geometria</span>
+<span class="keyword">importar</span> <span class="string">"geometria/Circulo.pp"</span>;
+<span class="keyword">importar</span> <span class="string">"geometria/Retangulo.pp"</span>;
+<span class="keyword">importar</span> <span class="string">"geometria/Triangulo.pp"</span>;
+<span class="keyword">importar</span> <span class="string">"geometria/utils.pp"</span>;</code>
+        </div>
+
+        <h2>Evitando Conflitos</h2>
+        <p>Se dois arquivos definem o mesmo nome, o último importado terá precedência:</p>
+
+        <div class="code-block">
+            <code><span class="keyword">importar</span> <span class="string">"arquivo1.pp"</span>;  <span class="comment">// Define funcao calcular()</span>
+<span class="keyword">importar</span> <span class="string">"arquivo2.pp"</span>;  <span class="comment">// Também define funcao calcular()</span>
+
+<span class="comment">// calcular() usará a versão do arquivo2.pp</span></code>
+        </div>
+
+        <nav class="doc-nav">
+            <a href="expressoes.html">← Anterior: Expressões e Operadores</a>
+            <a href="index.html">Voltar ao Início</a>
+        </nav>
+    </div>
+</body>
+
+</html>
