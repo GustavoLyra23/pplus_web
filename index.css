@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    background-color: #1d1b1bf8;
+    background-color: #ffffff;
     width: 100%;
     min-height: 100vh;
     margin: 0;
@@ -35,34 +35,33 @@ h1,
 h2,
 p,
 li {
-    color: #fff;
+    color: #000000;
 }
 
 h1 {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Comic Sans MS', monospace;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #c44569 100%);
+    background: #000000;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
 }
 
 h2 {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Comic Sans MS', monospace;
     font-size: 1.3rem;
     font-weight: 500;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #ff6b6b;
+    color: #000000;
     font-style: italic;
 }
 
 p {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
+    font-family: 'Comic Sans MS', monospace;
+    font-size: 1.0rem;
     font-weight: 400;
     line-height: 1.6;
     margin-bottom: 0.5rem;
@@ -77,8 +76,8 @@ ul {
 }
 
 li {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
+    font-family: 'Comic Sans MS', monospace;
+    font-size: 1.0rem;
     font-weight: 400;
     line-height: 1.6;
     margin-bottom: 0.5rem;
@@ -91,12 +90,12 @@ li::before {
     content: "→";
     position: absolute;
     left: 0;
-    color: #ff6b6b;
+    color: #000000;
     font-weight: bold;
 }
 
 em {
-    color: #888;
+    color: #b63a78;
     font-style: italic;
 }
 
@@ -119,64 +118,64 @@ em {
 
 .doc-nav a {
     display: block;
-    color: #ff6b6b;
+    color: #000000;
     text-decoration: none;
     padding: 8px 12px;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 500;
-    background: rgba(0, 0, 0, 0.521);
+    background: rgb(0, 0, 0);
     font-size: 0.9rem;
     margin-bottom: 3px;
     transition: all 0.2s;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
-.doc-nav a:hover {
-    background: rgba(0, 0, 0, 0.1);
+/* .doc-nav a:hover {
+    background: rgb(0, 0, 0);
     padding-left: 16px;
-}
+} */
 
 .breadcrumb {
     margin-bottom: 2rem;
 }
 
 .breadcrumb a {
-    color: #888;
+    color: #000000;
     text-decoration: none;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Comic Sans MS', monospace;
     font-size: 0.8rem;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 500;
+    /* font-style: italic; */
 }
 
 .breadcrumb a:hover {
-    color: #ff6b6b;
+    color: #000000;
 }
 
 h3 {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Comic Sans MS', monospace;
     font-size: 1rem;
     font-weight: 500;
-    color: #ddd;
+    color: #000000;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
     font-style: italic;
 }
 
 .code-block {
-    background: #0f0f0f;
-    border: 1px solid #444;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 4px;
     padding: 1.2rem;
     margin: 1rem 0;
     font-family: 'JetBrains Mono', monospace;
     line-height: 1.6;
     overflow-x: auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .code-block code {
-    color: #f8f8f2;
-    font-family: 'Cascadia Code', monospace;
+    color: #000000;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 0.85rem;
     font-weight: 400;
     white-space: pre;
@@ -186,12 +185,12 @@ h3 {
 }
 
 .code-block .keyword {
-    color: #ff6b9d;
+    color: #ff6ba9;
     font-weight: 600;
 }
 
 .code-block .string {
-    color: #98e024;
+    color: #24e03d;
 }
 
 .code-block .number {
@@ -204,27 +203,27 @@ h3 {
 }
 
 .code-block .function {
-    color: #66d9ef;
+    color: #cf66ef;
     font-weight: 500;
 }
 
 .code-block .type {
-    color: #fd971f;
+    color: #3ccefa;
     font-weight: 500;
 }
 
 .doc-nav {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid #444;
+    border-top: 1px solid #000000;
 }
 
 .doc-nav a {
     display: inline-block;
     margin-right: 2rem;
-    color: #ff6b6b;
+    color: #ffffff;
     text-decoration: none;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Comic Sans MS', monospace;
     font-weight: 600;
     font-style: italic;
 }
